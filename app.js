@@ -44,6 +44,10 @@ app.use("", (req, res) => {
     })
   
 })
+
+app.use("/yow", (req, res) => {
+  res.json({'YOE':"HELLOOOOO"})
+})
 // CLEANED ROUTES FOR AUTH
 app.use('/api/auth', authsRoutes);
 
