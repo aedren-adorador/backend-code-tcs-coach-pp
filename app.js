@@ -34,8 +34,8 @@ app.use((req, res, next) => {
 });
 
 mongoose.connect('mongodb+srv://aedren-adorador:aedrenmongodb@aedrencluster1.763f7xf.mongodb.net/', {})
-  .then(() => {console.log('Connected to TCS Coach++ Database!')})
-  .catch(() => {console.log('Failed to Connect to Database')})
+  .then(() => {console.log('Connected to TCS Coach++ Database!'), res.json({success: 'CONNECTED TO MONGO DB'})})
+  .catch(() => {console.log('Failed to Connect to Database'), res.json({success: 'FAILED TO CONNECT TO MONGO DB'})})
 
 app.use("", (req, res) => {
   res.json({success: 'CONNECTED!'})
