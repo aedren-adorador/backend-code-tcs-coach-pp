@@ -38,7 +38,11 @@ mongoose.connect('mongodb+srv://aedren-adorador:aedrenmongodb@aedrencluster1.763
   .catch(() => {console.log('Failed to Connect to Database')})
 
 app.use("", (req, res) => {
-  res.json({successMessage: "CONNECTED!"})
+  Admin.find()
+    .then(result => {
+      res.json({successMessage: "CONNECTED!", admins: result})
+    })
+  
 })
 // CLEANED ROUTES FOR AUTH
 app.use('/api/auth', authsRoutes);
