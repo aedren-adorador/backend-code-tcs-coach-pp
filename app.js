@@ -38,11 +38,7 @@ mongoose.connect('mongodb+srv://aedren-adorador:aedrenmongodb@aedrencluster1.763
   .catch(() => {console.log('Failed to Connect to Database')})
 
 app.use("", (req, res) => {
-  Admin.find()
-    .then(result => {
-      res.json({successMessage: "CONNECTED!", admins: result})
-    })
-  
+  res.json({success: 'CONNECTED!'})
 })
 
 app.use("/yow", (req, res) => {
